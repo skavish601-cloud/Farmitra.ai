@@ -1,0 +1,52 @@
+name: "✨ Feature Request"
+description: Propose a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, check `ROADMAP.md` to see if this is already planned.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve for farmers?
+      description: Describe the user need, not just the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should happen? Include UI/UX thoughts if relevant.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area affected
+      options:
+        - Farmer Dashboard
+        - Weather Dashboard
+        - Crop Advisory
+        - Disease Detection
+        - Market Prices
+        - Government Schemes
+        - AI Chat Assistant
+        - Notifications
+        - Profile / Settings
+        - New area
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked ROADMAP.md and this isn't already planned/in progress
+        - label: I'm willing to help implement this
+          required: false
