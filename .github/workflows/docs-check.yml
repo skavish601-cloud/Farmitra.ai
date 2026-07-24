@@ -1,0 +1,26 @@
+name: Documentation Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  docs-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fails the build if source files changed but docs/ wasn't touched,
+      # for PRs labeled "needs-docs". Adjust the label/paths as the repo grows.
+      - name: Check docs updated for labeled PRs
+        if: contains(github.event.pull_request.labels.*.name, 'needs-docs')
+        run: |
+          if ! git diff --name-only origin/main...HEAD | grep -q '^docs/'; then
+            echo "This PR is labeled 'needs-docs' but no files under docs/ were changed."
+            exit 1
+          fi
+
+      - name: Check for broken relative markdown links (root docs)
+        run: |
+          npx --yes markdown-link-check README.md CLAUDE.md CONTRIBUTING.md \
+            --config .github/markdown-link-check-config.json || true
