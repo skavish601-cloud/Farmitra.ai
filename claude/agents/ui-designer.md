@@ -1,1 +1,0 @@
-claude/agents/ui-designer.md
