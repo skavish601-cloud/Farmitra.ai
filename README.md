@@ -19,6 +19,15 @@ This repository follows the **Everything Claude Code** development philosophy: a
 | **Deployment** | Replit, Vercel |
 | **Design** | Figma |
 
+
+## 🎨 Design
+
+**Figma UI/UX**
+- Design File: https://www.figma.com/make/zKWto6ta7dwWlYZmpHiIKH/frammitra.ai?t=MsxfWYbHoCiQCoiC-1
+- Prototype: https://www.figma.com/make/zKWto6ta7dwWlYZmpHiIKH/frammitra.ai?t=MsxfWYbHoCiQCoiC-1
+
+
+> Keep the Figma file updated. All UI changes should be made in Figma before implementation.
 ## Core Features
 
 - **Farmer Dashboard** â€” fields, crops, tasks, health status at a glance
